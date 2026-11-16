@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aula 9 - Exemplos de @media e localStorage</title>
+  <link rel="stylesheet" href="./style.css" />
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <header class="topo">
+    <div class="topo-inner">
+      <div>
+        <h1>Exemplos de <code>@media</code> e <code>localStorage</code></h1>
+        <p id="boas-vindas">Aula 9 — Responsividade com Media Queries e persistência local no navegador.</p>
+      </div>
+      <div class="topo-controles no-print">
+        <button type="button" id="btn-tema" class="btn-secundario">Alternar Tema</button>
+        <button type="button" id="btn-imprimir" class="btn-secundario">Testar @media print</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Seção 1: Demonstração de @media -->
+    <section class="painel">
+      <div class="painel-cabecalho">
+        <h2>1. Exemplos de <code>@media</code> (Media Queries)</h2>
+        <span class="resolucao-atual" id="resolucao-atual">Largura: -- px</span>
+      </div>
+      <p class="descricao">
+        Redimensione a janela do navegador para ver o CSS ativar automaticamente diferentes regras
+        de layout, cores e badges conforme os breakpoints <code>@media</code>.
+      </p>
+
+      <div class="badges-media">
+        <span class="badge-bp bp-desktop">Desktop ativo (@media min-width: 1024px) — 3 colunas</span>
+        <span class="badge-bp bp-tablet">Tablet ativo (@media 641px a 1023px) — 2 colunas</span>
+        <span class="badge-bp bp-mobile">Mobile ativo (@media max-width: 640px) — 1 coluna</span>
+      </div>
+
+      <div class="grade-responsiva">
+        <article class="box-demo">
+          <h3>Breakpoint Desktop</h3>
+          <p>Acima de <code>1024px</code>, os cartões ficam dispostos em 3 colunas com fundo azulado.</p>
+        </article>
+        <article class="box-demo">
+          <h3>Breakpoint Tablet</h3>
+          <p>Entre <code>641px</code> e <code>1023px</code>, o grid adapta para 2 colunas confortáveis.</p>
+        </article>
+        <article class="box-demo">
+          <h3>Breakpoint Mobile &amp; Print</h3>
+          <p>Até <code>640px</code>, vira 1 coluna vertical. Em <code>@media print</code>, oculta botões.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Seção 2: Demonstração de localStorage -->
+    <section class="painel-duplo">
+      <article class="painel">
+        <h2>2. Preferências no <code>localStorage</code></h2>
+        <p class="descricao">As preferências salvas continuam disponíveis mesmo após fechar ou recarregar a página.</p>
+
+        <div class="campo">
+          <label for="nome-usuario">Seu nome (<code>setItem</code> / <code>getItem</code>):</label>
+          <div class="linha-acao no-print">
+            <input type="text" id="nome-usuario" placeholder="Ex.: Caio" />
+            <button type="button" id="btn-salvar-nome" class="btn-primario">Salvar Nome</button>
+          </div>
+        </div>
+
+        <div class="campo">
+          <label for="tamanho-fonte">Tamanho da fonte do conteúdo:</label>
+          <select id="tamanho-fonte" class="no-print">
+            <option value="normal">Normal (16px)</option>
+            <option value="grande">Grande (18px)</option>
+            <option value="pequena">Compacta (14px)</option>
+          </select>
+        </div>
+
+        <div class="campo">
+          <label for="nova-nota">Lista de anotações (JSON no <code>localStorage</code>):</label>
+          <div class="linha-acao no-print">
+            <input type="text" id="nova-nota" placeholder="Digite uma anotação..." />
+            <button type="button" id="btn-add-nota" class="btn-primario">Adicionar</button>
+          </div>
+          <ul id="lista-notas" class="lista-notas"></ul>
+        </div>
+      </article>
+
+      <article class="painel">
+        <div class="painel-cabecalho">
+          <h2>3. Inspetor do <code>localStorage</code></h2>
+          <button type="button" id="btn-limpar-storage" class="btn-perigo no-print">Limpar Tudo</button>
+        </div>
+        <p class="descricao">Visualização ao vivo das chaves e valores armazenados atualmente no navegador:</p>
+        <pre id="inspetor-storage" class="inspetor"></pre>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
