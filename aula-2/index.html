@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aula 2 - Nosso Primeiro HTML Semântico</title>
+</head>
+<body>
+  <!-- Substitui <div id="cabecalho"> pela tag semântica <header> -->
+  <header>
+    <h1>Portfólio de Desenvolvimento Web</h1>
+    <p>
+      Página da Aula 1 refatorada para <strong>HTML5 semântico</strong>,
+      utilizando tags com significado estrutural claro (<em>header</em>,
+      <em>nav</em>, <em>main</em>, <em>section</em>, <em>article</em>,
+      <em>aside</em> e <em>footer</em>).
+    </p>
+
+    <!-- Substitui <div id="menu"> por <nav> -->
+    <nav aria-label="Navegação principal">
+      <ul>
+        <li><a href="#sobre">Sobre mim</a></li>
+        <li><a href="#tecnologias">Tecnologias</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#curiosidades">Curiosidades</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <hr />
+
+  <!-- Substitui <div id="conteudo-principal"> por <main> -->
+  <main>
+    <!-- Substitui <div id="sobre"> por <section> -->
+    <section id="sobre">
+      <h2>Sobre mim</h2>
+      <p>
+        Olá! Sou estudante de Tecnologia da Informação e esta página representa a
+        <strong>evolução semântica</strong> da nossa primeira página HTML da disciplina.
+      </p>
+      <p>
+        Meu objetivo neste semestre é dominar a estruturação de páginas com
+        <mark>HTML5</mark>, estilização com <mark>CSS3</mark> e interatividade
+        com <mark>JavaScript</mark>.
+      </p>
+    </section>
+
+    <!-- Substitui <div id="tecnologias"> por <section> -->
+    <section id="tecnologias">
+      <h2>Tecnologias em Estudo</h2>
+      <ol>
+        <li><strong>HTML5</strong> — Estrutura semântica e acessibilidade na web</li>
+        <li><strong>CSS3</strong> — Estilização, Flexbox, Grid e Responsividade</li>
+        <li><strong>JavaScript</strong> — Lógica no navegador, DOM, validação e <em>localStorage</em></li>
+        <li><strong>Git &amp; GitHub</strong> — Controle de versão e publicação do código</li>
+      </ol>
+    </section>
+
+    <!-- Substitui <div id="projetos"> por <section> contendo <article> -->
+    <section id="projetos">
+      <h2>Projetos da Disciplina</h2>
+
+      <article>
+        <header>
+          <h3>Estrutura Básica em HTML</h3>
+          <p>Publicado em <time datetime="2026-11-16">16/11/2026</time></p>
+        </header>
+        <p>
+          Exercício inicial para compreender a árvore DOM e como os navegadores
+          e leitores de tela interpretam títulos, parágrafos, listas e seções.
+        </p>
+      </article>
+
+      <article>
+        <header>
+          <h3>Formulários e Validações</h3>
+          <p>Publicado em <time datetime="2026-11-16">16/11/2026</time></p>
+        </header>
+        <p>
+          Criação de formulários HTML com envio via método <em>POST</em> e
+          validação no lado do cliente.
+        </p>
+      </article>
+    </section>
+
+    <!-- Substitui <div id="curiosidades"> por <aside> -->
+    <aside id="curiosidades">
+      <h2>Links Úteis de Estudo</h2>
+      <ul>
+        <li><a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML" target="_blank" rel="noopener noreferrer">Documentação MDN - HTML</a></li>
+        <li><a href="https://validator.w3.org/" target="_blank" rel="noopener noreferrer">Validador W3C</a></li>
+      </ul>
+    </aside>
+  </main>
+
+  <hr />
+
+  <!-- Substitui <div id="rodape"> por <footer> e <address> -->
+  <footer>
+    <address id="contato">
+      Contato: <a href="mailto:aluno@exemplo.edu.br">aluno@exemplo.edu.br</a>
+    </address>
+    <p><small>&copy; 2026 - Disciplina de Desenvolvimento Web | Aula 2 (HTML Semântico)</small></p>
+  </footer>
+</body>
+</html>
