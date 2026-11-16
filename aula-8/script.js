@@ -1,4 +1,4 @@
-// Aula 8 — Formulário de Cadastro Validado + Máscaras + POST em https://postman-echo.com/post
+// Aula 8: Formulário de Cadastro Validado, Máscaras e POST em https://postman-echo.com/post
 
 const API_URL = "https://postman-echo.com/post";
 

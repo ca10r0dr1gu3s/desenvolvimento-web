@@ -1,14 +1,12 @@
-// Aula 7 — Nosso primeiro JavaScript
+// Aula 7: Manipulação do DOM, eventos, contador e lista dinâmica
 
 document.addEventListener("DOMContentLoaded", () => {
-  // 1. Alternância de tema (Claro / Escuro)
   const btnTema = document.getElementById("btn-tema");
   btnTema.addEventListener("click", () => {
     const escuroAtivo = document.body.classList.toggle("dark");
     btnTema.textContent = escuroAtivo ? "Ativar Modo Claro" : "Ativar Modo Escuro";
   });
 
-  // 2. Saudação dinâmica pelo nome informado
   const inputNome = document.getElementById("input-nome");
   const btnSaudar = document.getElementById("btn-saudar");
   const msgSaudacao = document.getElementById("mensagem-saudacao");
@@ -19,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const periodo = hora < 12 ? "Bom dia" : hora < 18 ? "Boa tarde" : "Boa noite";
 
     if (!nome) {
-      msgSaudacao.textContent = `${periodo}! Digite seu nome acima para personalizar a saudação.`;
+      msgSaudacao.textContent = `${periodo}. Digite seu nome acima para personalizar a saudação.`;
       return;
     }
 
@@ -31,7 +29,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (event.key === "Enter") atualizarSaudacao();
   });
 
-  // 3. Contador interativo
   let contador = 0;
   const visorContador = document.getElementById("valor-contador");
   const btnAumentar = document.getElementById("btn-aumentar");
@@ -60,7 +57,6 @@ document.addEventListener("DOMContentLoaded", () => {
     renderizarContador();
   });
 
-  // 4. Lista dinâmica de itens
   const inputItem = document.getElementById("input-item");
   const btnAdicionar = document.getElementById("btn-adicionar");
   const listaItens = document.getElementById("lista-itens");
@@ -93,7 +89,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (event.key === "Enter") adicionarItem();
   });
 
-  // Itens iniciais de exemplo
   adicionarItem("Praticar eventos addEventListener");
   adicionarItem("Entender querySelector e getElementById");
 });

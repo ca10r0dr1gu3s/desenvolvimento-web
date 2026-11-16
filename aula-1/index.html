@@ -3,21 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aula 1 - Meu Primeiro HTML (Sem Tags Semânticas)</title>
+  <title>Aula 1: Primeiro HTML sem tags semânticas</title>
 </head>
 <body>
-  <!-- Cabeçalho construído apenas com div genérica (ainda sem tags semânticas) -->
+  <!-- Cabeçalho construído com div genérica, antes da introdução de tags semânticas -->
   <div id="cabecalho">
-    <h1>Portfólio de Desenvolvimento Web</h1>
-    <p>Primeira página HTML da disciplina — versão inicial utilizando apenas <b>tags genéricas</b> (<i>div</i> e <i>span</i>).</p>
+    <h1>Caderno de Desenvolvimento Front-End</h1>
+    <p>Anotações iniciais da disciplina, escritas em <b>HTML básico</b> utilizando apenas blocos genéricos (<i>div</i> e <i>span</i>).</p>
 
-    <!-- Menu de navegação feito com div e lista não ordenada -->
+    <!-- Menu feito com div e lista -->
     <div id="menu">
       <ul>
-        <li><a href="#sobre">Sobre mim</a></li>
-        <li><a href="#tecnologias">Tecnologias</a></li>
-        <li><a href="#projetos">Projetos</a></li>
-        <li><a href="#curiosidades">Curiosidades</a></li>
+        <li><a href="#apresentacao">Apresentação</a></li>
+        <li><a href="#conteudos">Conteúdos da ementa</a></li>
+        <li><a href="#registros">Registros de aula</a></li>
+        <li><a href="#referencias">Referências</a></li>
         <li><a href="#contato">Contato</a></li>
       </ul>
     </div>
@@ -25,76 +25,69 @@
 
   <hr />
 
-  <!-- Conteúdo principal envolvido em div genérica -->
+  <!-- Conteúdo principal em div -->
   <div id="conteudo-principal">
-    <!-- Bloco 1: Sobre mim -->
-    <div id="sobre" class="bloco">
-      <h2>Sobre mim</h2>
+    <div id="apresentacao" class="bloco">
+      <h2>Apresentação</h2>
       <p>
-        Olá! Sou estudante de Tecnologia da Informação e esta é a minha
-        <b>primeira página em HTML puro</b>, construída antes de aprendermos as
-        tags semânticas do HTML5.
+        Sou Caio Rodrigues, estudante em Londrina, e este arquivo registra o primeiro
+        exercício prático de marcação antes da adoção das tags semânticas do HTML5.
       </p>
       <p>
-        Meu objetivo neste semestre é dominar a estruturação de páginas com
-        <span class="destaque">HTML5</span>, estilização com
-        <span class="destaque">CSS3</span> e interatividade com
-        <span class="destaque">JavaScript</span>.
+        Aqui o foco está na hierarquia de títulos, parágrafos, listas e hiperlinks
+        utilizando <span class="termo">div</span> para agrupar seções e
+        <span class="termo">span</span> para marcações em linha.
       </p>
     </div>
 
-    <!-- Bloco 2: Tecnologias -->
-    <div id="tecnologias" class="bloco">
-      <h2>Tecnologias em Estudo</h2>
+    <div id="conteudos" class="bloco">
+      <h2>Conteúdos da ementa</h2>
       <ol>
-        <li><b>HTML</b> — Estrutura e marcação de documentos web</li>
-        <li><b>CSS</b> — Estilização, Flexbox, Grid e Responsividade</li>
-        <li><b>JavaScript</b> — Lógica no navegador, DOM, validação e <i>localStorage</i></li>
-        <li><b>Git &amp; GitHub</b> — Controle de versão e publicação do código</li>
+        <li><b>HTML</b>: estrutura documental, textos, listas, links e formulários</li>
+        <li><b>CSS</b>: seletores, modelo de caixa, Flexbox, Grid e <i>media queries</i></li>
+        <li><b>JavaScript</b>: manipulação do DOM, máscaras, validação e <i>localStorage</i></li>
+        <li><b>Git e GitHub</b>: versionamento das entregas por pasta</li>
       </ol>
     </div>
 
-    <!-- Bloco 3: Projetos -->
-    <div id="projetos" class="bloco">
-      <h2>Projetos da Disciplina</h2>
+    <div id="registros" class="bloco">
+      <h2>Registros de aula</h2>
 
-      <div class="cartao-projeto">
-        <h3>Estrutura Básica em HTML</h3>
-        <p>Publicado em <span>16/11/2026</span></p>
+      <div class="registro">
+        <h3>Estrutura inicial sem semântica</h3>
+        <p>Data: <span>10/08/2026</span></p>
         <p>
-          Exercício inicial para compreender a árvore DOM e como os navegadores
-          interpretam títulos, parágrafos, listas e links.
+          Construção de uma página completa apenas com divisões genéricas, observando
+          como o navegador renderiza a árvore do documento.
         </p>
       </div>
 
-      <div class="cartao-projeto">
-        <h3>Formulários e Validações</h3>
-        <p>Publicado em <span>16/11/2026</span></p>
+      <div class="registro">
+        <h3>Preparação para refatoração semântica</h3>
+        <p>Data: <span>17/08/2026</span></p>
         <p>
-          Criação de formulários HTML com envio via método <i>POST</i> e
-          validação no lado do cliente.
+          Identificação dos blocos que passarão a receber elementos próprios de
+          cabeçalho, navegação, conteúdo principal, artigos e rodapé.
         </p>
       </div>
     </div>
 
-    <!-- Conteúdo complementar em div -->
-    <div id="curiosidades" class="barra-lateral">
-      <h2>Links Úteis de Estudo</h2>
+    <div id="referencias" class="bloco-lateral">
+      <h2>Referências oficiais</h2>
       <ul>
-        <li><a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML" target="_blank" rel="noopener noreferrer">Documentação MDN - HTML</a></li>
-        <li><a href="https://validator.w3.org/" target="_blank" rel="noopener noreferrer">Validador W3C</a></li>
+        <li><a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML" target="_blank" rel="noopener noreferrer">MDN Web Docs: HTML</a></li>
+        <li><a href="https://validator.w3.org/" target="_blank" rel="noopener noreferrer">Validador de Marcação W3C</a></li>
       </ul>
     </div>
   </div>
 
   <hr />
 
-  <!-- Rodapé construído com div -->
   <div id="rodape">
     <div id="contato">
-      <p>Contato: <a href="mailto:aluno@exemplo.edu.br">aluno@exemplo.edu.br</a></p>
+      <p>Contato acadêmico: <a href="mailto:caio.rodrigues@exemplo.edu.br">caio.rodrigues@exemplo.edu.br</a></p>
     </div>
-    <p>&copy; 2026 - Disciplina de Desenvolvimento Web | Aula 1 (HTML não semântico)</p>
+    <p>&copy; 2026 · Desenvolvimento Front-End para Web · Aula 1</p>
   </div>
 </body>
 </html>

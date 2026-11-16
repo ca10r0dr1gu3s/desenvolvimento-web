@@ -3,16 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aula 4 - Inscrição Hackathon Tech &amp; Web</title>
+  <title>Credenciamento · Mostra de Software Livre Londrina</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg: #0f172a;
-      --surface: #ffffff;
-      --primary: #2563eb;
-      --primary-hover: #1d4ed8;
-      --text: #1e293b;
-      --muted: #64748b;
-      --border: #cbd5e1;
+      --bg: #dfdedb;
+      --surface: #f4f3ef;
+      --card: #ffffff;
+      --ink: #26251e;
+      --muted: #5f5d55;
+      --accent: #2456d6;
+      --accent-dark: #193fa3;
+      --accent-ink: #ffffff;
+      --line: #c7c4bc;
     }
 
     * {
@@ -21,71 +26,132 @@
 
     body {
       margin: 0;
-      padding: 2.5rem 1rem;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-      color: var(--text);
+      padding: 2.5rem 1.25rem;
+      font-family: "Instrument Sans", system-ui, sans-serif;
+      background-color: var(--bg);
+      color: var(--ink);
       line-height: 1.5;
     }
 
-    .container {
-      max-width: 760px;
+    .folha {
+      max-width: 1020px;
       margin: 0 auto;
-      background: var(--surface);
-      padding: 2.25rem;
-      border-radius: 14px;
-      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+      background-color: var(--surface);
+      border: 1px solid var(--ink);
+      display: grid;
+      grid-template-columns: 300px 1fr;
     }
 
-    header {
-      border-bottom: 2px solid #e2e8f0;
-      padding-bottom: 1rem;
-      margin-bottom: 1.75rem;
+    .lateral {
+      padding: 2rem 1.75rem;
+      border-right: 1px solid var(--ink);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 2rem;
     }
 
-    header h1 {
-      margin: 0 0 0.4rem;
-      color: #0f172a;
-      font-size: 1.75rem;
-    }
-
-    header p {
-      margin: 0;
-      color: var(--muted);
-    }
-
-    fieldset {
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 1.25rem 1.5rem;
+    .marca {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
       margin-bottom: 1.5rem;
     }
 
-    legend {
+    .marca-titulo {
       font-weight: 700;
-      color: var(--primary);
-      padding: 0 0.5rem;
+      font-size: 0.95rem;
+      letter-spacing: -0.01em;
     }
 
-    .grid-2 {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1rem;
+    .lateral h1 {
+      margin: 0 0 0.9rem;
+      font-size: 1.9rem;
+      line-height: 1.12;
+      letter-spacing: -0.03em;
     }
 
-    .field {
-      margin-bottom: 1rem;
-    }
-
-    .field label.title {
-      display: block;
-      font-weight: 600;
-      margin-bottom: 0.35rem;
+    .lateral p {
+      margin: 0 0 1.25rem;
+      color: var(--muted);
       font-size: 0.95rem;
     }
 
-    .required-mark {
-      color: #dc2626;
+    .ficha-evento {
+      border-top: 1px solid var(--line);
+      padding-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      font-size: 0.88rem;
+    }
+
+    .ficha-item strong {
+      display: block;
+      font-family: "DM Mono", monospace;
+      font-size: 0.76rem;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+
+    .nota-endpoint {
+      font-family: "DM Mono", monospace;
+      font-size: 0.78rem;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      padding-top: 0.9rem;
+      word-break: break-word;
+    }
+
+    .nota-endpoint span {
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    .formulario-area {
+      padding: 2rem 2.25rem;
+      background-color: var(--card);
+    }
+
+    fieldset {
+      border: none;
+      padding: 0;
+      margin: 0 0 2rem;
+    }
+
+    legend {
+      width: 100%;
+      padding-bottom: 0.55rem;
+      margin-bottom: 1.15rem;
+      border-bottom: 1px solid var(--ink);
+      font-weight: 700;
+      font-size: 1.05rem;
+      letter-spacing: -0.01em;
+    }
+
+    .grade-campos {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem 1.2rem;
+    }
+
+    .campo {
+      margin-bottom: 1rem;
+    }
+
+    .grade-campos .campo {
+      margin-bottom: 0;
+    }
+
+    .campo label.titulo {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+    }
+
+    .obrigatorio {
+      color: var(--accent);
     }
 
     input[type="text"],
@@ -95,252 +161,321 @@
     select,
     textarea {
       width: 100%;
-      padding: 0.65rem 0.8rem;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      font-size: 0.95rem;
+      padding: 0.65rem 0.75rem;
+      border: 1px solid var(--line);
+      border-radius: 3px;
+      background-color: #fbfbfa;
+      color: var(--ink);
       font-family: inherit;
-      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      font-size: 0.95rem;
+      transition: border-color 0.15s ease;
+    }
+
+    input[name="cpf"],
+    input[name="telefone"],
+    input[name="github_usuario"] {
+      font-family: "DM Mono", monospace;
+      font-size: 0.9rem;
     }
 
     input:focus,
     select:focus,
     textarea:focus {
-      outline: none;
-      border-color: var(--primary);
-      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+      outline: 2px solid var(--accent);
+      outline-offset: 1px;
+      border-color: var(--accent);
     }
 
-    .hint {
+    .ajuda {
       display: block;
-      margin-top: 0.25rem;
-      font-size: 0.8rem;
+      margin-top: 0.28rem;
+      font-family: "DM Mono", monospace;
+      font-size: 0.75rem;
       color: var(--muted);
     }
 
-    .option-group {
+    .grupo-opcoes {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.9rem 1.25rem;
-      margin-top: 0.35rem;
+      gap: 0.7rem 1.35rem;
+      padding-top: 0.25rem;
     }
 
-    .option-group label {
+    .grupo-opcoes label,
+    .aceite {
       display: inline-flex;
       align-items: center;
-      gap: 0.4rem;
-      font-weight: 400;
+      gap: 0.45rem;
+      font-size: 0.94rem;
       cursor: pointer;
     }
 
-    .actions {
+    .acoes {
       display: flex;
-      gap: 1rem;
       justify-content: flex-end;
-      margin-top: 1.25rem;
+      gap: 0.75rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--line);
     }
 
     button {
-      padding: 0.75rem 1.5rem;
-      border: none;
-      border-radius: 8px;
-      font-size: 1rem;
+      padding: 0.75rem 1.45rem;
+      border-radius: 3px;
+      font-family: inherit;
+      font-size: 0.95rem;
       font-weight: 600;
       cursor: pointer;
+      transition: transform 0.12s ease, background-color 0.15s ease;
+    }
+
+    button:active {
+      transform: translateY(1px);
     }
 
     button[type="submit"] {
-      background: var(--primary);
-      color: #ffffff;
+      border: 1px solid var(--accent);
+      background-color: var(--accent);
+      color: var(--accent-ink);
     }
 
     button[type="submit"]:hover {
-      background: var(--primary-hover);
+      background-color: var(--accent-dark);
     }
 
     button[type="reset"] {
-      background: #e2e8f0;
-      color: #334155;
+      border: 1px solid var(--line);
+      background-color: var(--surface);
+      color: var(--ink);
+    }
+
+    button[type="reset"]:hover {
+      background-color: #e6e4dd;
+    }
+
+    @media (max-width: 820px) {
+      .folha {
+        grid-template-columns: 1fr;
+      }
+
+      .lateral {
+        border-right: none;
+        border-bottom: 1px solid var(--ink);
+      }
+    }
+
+    @media (max-width: 560px) {
+      .formulario-area {
+        padding: 1.4rem;
+      }
+
+      .grade-campos {
+        grid-template-columns: 1fr;
+      }
+
+      .acoes {
+        flex-direction: column-reverse;
+      }
     }
   </style>
 </head>
 <body>
-  <main class="container">
-    <header>
-      <h1>Inscrição — Hackathon Tech &amp; Web 2026</h1>
-      <p>Formulário HTML com envio via POST para <code>https://postman-echo.com/post</code>.</p>
-    </header>
-
-    <form action="https://postman-echo.com/post" method="POST">
-      <fieldset>
-        <legend>1. Identificação do Participante</legend>
-
-        <div class="grid-2">
-          <!-- Campo 1: Texto obrigatório com placeholder -->
-          <div class="field">
-            <label class="title" for="nome_completo">Nome completo <span class="required-mark">*</span></label>
-            <input
-              type="text"
-              id="nome_completo"
-              name="nome_completo"
-              placeholder="Ex.: Caio Rodrigues"
-              minlength="3"
-              required
-            />
-          </div>
-
-          <!-- Campo 2: E-mail obrigatório com placeholder -->
-          <div class="field">
-            <label class="title" for="email">E-mail <span class="required-mark">*</span></label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="seuemail@exemplo.com"
-              required
-            />
-          </div>
-
-          <!-- Campo 3: CPF com pattern de validação -->
-          <div class="field">
-            <label class="title" for="cpf">CPF <span class="required-mark">*</span></label>
-            <input
-              type="text"
-              id="cpf"
-              name="cpf"
-              placeholder="000.000.000-00"
-              pattern="\d{3}\.\d{3}\.\d{3}-\d{2}"
-              title="Digite o CPF no formato 000.000.000-00"
-              required
-            />
-            <span class="hint">Formato: 000.000.000-00</span>
-          </div>
-
-          <!-- Campo 4: Telefone com pattern de validação -->
-          <div class="field">
-            <label class="title" for="telefone">Telefone / WhatsApp <span class="required-mark">*</span></label>
-            <input
-              type="tel"
-              id="telefone"
-              name="telefone"
-              placeholder="(43) 99999-9999"
-              pattern="\(\d{2}\)\s?\d{4,5}-\d{4}"
-              title="Informe o DDD e número no formato (43) 99999-9999"
-              required
-            />
-            <span class="hint">Formato: (DD) 99999-9999</span>
-          </div>
-
-          <!-- Campo 5: Data de nascimento -->
-          <div class="field">
-            <label class="title" for="data_nascimento">Data de nascimento <span class="required-mark">*</span></label>
-            <input
-              type="date"
-              id="data_nascimento"
-              name="data_nascimento"
-              required
-            />
-          </div>
-
-          <!-- Campo 6: Usuário GitHub com pattern -->
-          <div class="field">
-            <label class="title" for="github_usuario">Usuário no GitHub</label>
-            <input
-              type="text"
-              id="github_usuario"
-              name="github_usuario"
-              placeholder="ex: ca10r0dr1gu3s"
-              pattern="[A-Za-z0-9-]{1,39}"
-              title="Use apenas letras, números ou hífen (sem @)"
-            />
-          </div>
-        </div>
-      </fieldset>
-
-      <fieldset>
-        <legend>2. Perfil Técnico e Participação</legend>
-
-        <div class="grid-2">
-          <!-- Campo 7: Select -->
-          <div class="field">
-            <label class="title" for="nivel_experiencia">Nível de experiência <span class="required-mark">*</span></label>
-            <select id="nivel_experiencia" name="nivel_experiencia" required>
-              <option value="">Selecione seu nível...</option>
-              <option value="iniciante">Iniciante (1º contato com programação)</option>
-              <option value="intermediario">Intermediário (já crio projetos)</option>
-              <option value="avancado">Avançado (experiência em produção)</option>
-            </select>
-          </div>
-
-          <!-- Campo 8: Select -->
-          <div class="field">
-            <label class="title" for="tamanho_camiseta">Tamanho da camiseta</label>
-            <select id="tamanho_camiseta" name="tamanho_camiseta">
-              <option value="P">P</option>
-              <option value="M" selected>M</option>
-              <option value="G">G</option>
-              <option value="GG">GG</option>
-              <option value="XG">XG</option>
-            </select>
-          </div>
+  <main class="folha">
+    <aside class="lateral">
+      <div>
+        <div class="marca">
+          <svg width="34" height="34" viewBox="0 0 34 34" fill="none" aria-hidden="true">
+            <rect x="1" y="1" width="32" height="32" stroke="#26251e" stroke-width="2" />
+            <rect x="7" y="7" width="12" height="12" fill="#2456d6" />
+            <line x1="7" y1="25" x2="27" y2="25" stroke="#26251e" stroke-width="2" />
+            <line x1="23" y1="7" x2="23" y2="19" stroke="#26251e" stroke-width="2" />
+          </svg>
+          <span class="marca-titulo">MSL Londrina</span>
         </div>
 
-        <!-- Campo 9: Radio -->
-        <div class="field">
-          <label class="title">Trilha principal <span class="required-mark">*</span></label>
-          <div class="option-group">
-            <label><input type="radio" name="trilha" value="front-end" required /> Front-end</label>
-            <label><input type="radio" name="trilha" value="back-end" /> Back-end</label>
-            <label><input type="radio" name="trilha" value="full-stack" /> Full Stack</label>
-            <label><input type="radio" name="trilha" value="ia-dados" /> IA &amp; Dados</label>
+        <h1>Mostra Norte Paranaense de Software Livre</h1>
+        <p>Preencha sua ficha de credenciamento para garantir vaga nas oficinas práticas e palestras técnicas.</p>
+
+        <div class="ficha-evento">
+          <div class="ficha-item">
+            <strong>Data e horário</strong>
+            Sábado, 21 de novembro de 2026, das 8h30 às 18h
+          </div>
+          <div class="ficha-item">
+            <strong>Local</strong>
+            Auditório Central, Rua Pernambuco, Centro, Londrina
+          </div>
+          <div class="ficha-item">
+            <strong>Entrada</strong>
+            Inscrição gratuita mediante confirmação nominal
           </div>
         </div>
-
-        <!-- Campo 10: Radio -->
-        <div class="field">
-          <label class="title">Modalidade de participação</label>
-          <div class="option-group">
-            <label><input type="radio" name="modalidade" value="presencial" checked /> Presencial</label>
-            <label><input type="radio" name="modalidade" value="online" /> Online</label>
-          </div>
-        </div>
-
-        <!-- Campo 11: Checkbox -->
-        <div class="field">
-          <label class="title">Tecnologias de interesse</label>
-          <div class="option-group">
-            <label><input type="checkbox" name="interesses" value="html-css" /> HTML &amp; CSS</label>
-            <label><input type="checkbox" name="interesses" value="javascript" /> JavaScript</label>
-            <label><input type="checkbox" name="interesses" value="apis-rest" /> APIs REST</label>
-            <label><input type="checkbox" name="interesses" value="git-github" /> Git &amp; GitHub</label>
-          </div>
-        </div>
-
-        <!-- Campo 12: Textarea -->
-        <div class="field">
-          <label class="title" for="motivacao">Ideia ou motivação para o evento</label>
-          <textarea
-            id="motivacao"
-            name="motivacao"
-            rows="4"
-            placeholder="Descreva brevemente o projeto que gostaria de desenvolver..."
-          ></textarea>
-        </div>
-
-        <!-- Campo 13: Checkbox obrigatório -->
-        <div class="field">
-          <label>
-            <input type="checkbox" name="aceite_regulamento" value="sim" required />
-            Declaro que li e concordo com o regulamento do evento. <span class="required-mark">*</span>
-          </label>
-        </div>
-      </fieldset>
-
-      <div class="actions">
-        <button type="reset">Limpar dados</button>
-        <button type="submit">Enviar inscrição (POST)</button>
       </div>
-    </form>
+
+      <div class="nota-endpoint">
+        Destino do envio (POST):<br />
+        <span>https://postman-echo.com/post</span>
+      </div>
+    </aside>
+
+    <section class="formulario-area" aria-label="Formulário de credenciamento">
+      <form action="https://postman-echo.com/post" method="POST">
+        <fieldset>
+          <legend>Identificação do participante</legend>
+
+          <div class="grade-campos">
+            <div class="campo">
+              <label class="titulo" for="nome_completo">Nome completo <span class="obrigatorio">*</span></label>
+              <input
+                type="text"
+                id="nome_completo"
+                name="nome_completo"
+                placeholder="Ex.: Caio Rodrigues"
+                minlength="3"
+                required
+              />
+            </div>
+
+            <div class="campo">
+              <label class="titulo" for="email">E-mail <span class="obrigatorio">*</span></label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="caio.rodrigues@exemplo.com"
+                required
+              />
+            </div>
+
+            <div class="campo">
+              <label class="titulo" for="cpf">CPF <span class="obrigatorio">*</span></label>
+              <input
+                type="text"
+                id="cpf"
+                name="cpf"
+                placeholder="000.000.000-00"
+                pattern="\d{3}\.\d{3}\.\d{3}-\d{2}"
+                title="Digite o CPF no formato 000.000.000-00"
+                required
+              />
+              <span class="ajuda">Padrão: 000.000.000-00</span>
+            </div>
+
+            <div class="campo">
+              <label class="titulo" for="telefone">Telefone com DDD <span class="obrigatorio">*</span></label>
+              <input
+                type="tel"
+                id="telefone"
+                name="telefone"
+                placeholder="(43) 99999-8888"
+                pattern="\(\d{2}\)\s?\d{4,5}-\d{4}"
+                title="Informe no formato (43) 99999-8888"
+                required
+              />
+              <span class="ajuda">Padrão: (DD) 99999-9999</span>
+            </div>
+
+            <div class="campo">
+              <label class="titulo" for="data_nascimento">Data de nascimento <span class="obrigatorio">*</span></label>
+              <input
+                type="date"
+                id="data_nascimento"
+                name="data_nascimento"
+                required
+              />
+            </div>
+
+            <div class="campo">
+              <label class="titulo" for="github_usuario">Usuário no GitHub</label>
+              <input
+                type="text"
+                id="github_usuario"
+                name="github_usuario"
+                placeholder="ca10r0dr1gu3s"
+                pattern="[A-Za-z0-9-]{1,39}"
+                title="Use apenas letras, números ou hífen"
+              />
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Trilha e participação</legend>
+
+          <div class="grade-campos" style="margin-bottom: 1.1rem;">
+            <div class="campo">
+              <label class="titulo" for="nivel_experiencia">Experiência prática <span class="obrigatorio">*</span></label>
+              <select id="nivel_experiencia" name="nivel_experiencia" required>
+                <option value="">Selecione seu nível</option>
+                <option value="iniciante">Iniciante em programação</option>
+                <option value="intermediario">Intermediário com projetos pessoais</option>
+                <option value="avancado">Avançado em ambiente profissional</option>
+              </select>
+            </div>
+
+            <div class="campo">
+              <label class="titulo" for="tamanho_camiseta">Camiseta do evento</label>
+              <select id="tamanho_camiseta" name="tamanho_camiseta">
+                <option value="P">P</option>
+                <option value="M" selected>M</option>
+                <option value="G">G</option>
+                <option value="GG">GG</option>
+                <option value="XG">XG</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="campo">
+            <label class="titulo">Trilha escolhida <span class="obrigatorio">*</span></label>
+            <div class="grupo-opcoes">
+              <label><input type="radio" name="trilha" value="front-end" required /> Interfaces Web</label>
+              <label><input type="radio" name="trilha" value="back-end" /> Servidores e Linux</label>
+              <label><input type="radio" name="trilha" value="full-stack" /> Sistemas Completos</label>
+              <label><input type="radio" name="trilha" value="redes" /> Redes Abertas</label>
+            </div>
+          </div>
+
+          <div class="campo">
+            <label class="titulo">Formato de participação</label>
+            <div class="grupo-opcoes">
+              <label><input type="radio" name="modalidade" value="presencial" checked /> Presencial em Londrina</label>
+              <label><input type="radio" name="modalidade" value="online" /> Transmissão online</label>
+            </div>
+          </div>
+
+          <div class="campo">
+            <label class="titulo">Oficinas de interesse</label>
+            <div class="grupo-opcoes">
+              <label><input type="checkbox" name="interesses" value="html-css" /> HTML e CSS</label>
+              <label><input type="checkbox" name="interesses" value="javascript" /> JavaScript</label>
+              <label><input type="checkbox" name="interesses" value="apis-rest" /> APIs REST</label>
+              <label><input type="checkbox" name="interesses" value="git-github" /> Git e GitHub</label>
+            </div>
+          </div>
+
+          <div class="campo">
+            <label class="titulo" for="motivacao">Tema que gostaria de ver nas bancadas</label>
+            <textarea
+              id="motivacao"
+              name="motivacao"
+              rows="3"
+              placeholder="Conte brevemente que tipo de projeto ou ferramenta livre você quer explorar..."
+            ></textarea>
+          </div>
+
+          <div class="campo" style="margin-bottom: 0;">
+            <label class="aceite">
+              <input type="checkbox" name="aceite_regulamento" value="sim" required />
+              <span>Confirmo que li e aceito as normas de convivência do evento. <span class="obrigatorio">*</span></span>
+            </label>
+          </div>
+        </fieldset>
+
+        <div class="acoes">
+          <button type="reset">Limpar ficha</button>
+          <button type="submit">Confirmar inscrição</button>
+        </div>
+      </form>
+    </section>
   </main>
 </body>
 </html>

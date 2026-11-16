@@ -1,4 +1,4 @@
-// Aula 9 — Exemplos práticos de @media (viewport) e localStorage
+// Aula 9: Exemplos práticos de @media (viewport) e localStorage
 
 const CHAVES = {
   tema: "aula9_tema",
@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function atualizarSaudacao(nome) {
     boasVindas.textContent = nome
       ? `Olá, ${nome}! Suas preferências estão salvas no localStorage.`
-      : "Aula 9 — Responsividade com Media Queries e persistência local no navegador.";
+      : "Adaptação de colunas por largura de tela e persistência local no navegador.";
   }
 
   function obterNotas() {

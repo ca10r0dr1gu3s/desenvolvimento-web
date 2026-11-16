@@ -3,21 +3,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aula 8 - Formulário de Cadastro Validado</title>
+  <title>Cadastro de Associado · FabLab Norte</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="./style.css" />
   <script src="./script.js" defer></script>
 </head>
 <body>
   <main class="wrapper">
     <header class="cabecalho">
-      <span class="badge">Aula 8 • Validação, Máscaras e API POST</span>
-      <h1>Cadastro de Usuário</h1>
-      <p>Preencha todos os campos obrigatórios. Os dados válidos serão enviados para <code>https://postman-echo.com/post</code>.</p>
+      <div class="cabecalho-marca">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <rect x="2" y="2" width="9" height="9" fill="#ff4a1f" />
+          <rect x="13" y="2" width="9" height="9" stroke="#eff0f1" stroke-width="2" />
+          <rect x="2" y="13" width="20" height="9" stroke="#eff0f1" stroke-width="2" />
+        </svg>
+        <span>FabLab Norte · Londrina</span>
+      </div>
+      <h1>Cadastro de Associado</h1>
+      <p>Preencha seus dados de acesso à oficina de prototipagem. Após validação, a ficha é enviada para <code>https://postman-echo.com/post</code>.</p>
     </header>
 
     <form id="form-cadastro" novalidate>
       <section class="secao">
-        <h2>Dados Pessoais</h2>
+        <h2>Dados pessoais</h2>
         <div class="grid">
           <div class="campo span-2">
             <label for="nome">Nome completo *</label>
@@ -26,8 +36,8 @@
           </div>
 
           <div class="campo">
-            <label for="cpf">CPF * <small>(mascarado)</small></label>
-            <input type="text" id="cpf" name="cpf" placeholder="000.000.000-00" maxlength="14" inputmode="numeric" />
+            <label for="cpf">CPF * <small>(com máscara)</small></label>
+            <input type="text" id="cpf" name="cpf" class="mono" placeholder="000.000.000-00" maxlength="14" inputmode="numeric" />
             <span class="erro-msg" id="erro-cpf"></span>
           </div>
 
@@ -44,25 +54,25 @@
           </div>
 
           <div class="campo">
-            <label for="telefone">Telefone / WhatsApp * <small>(mascarado)</small></label>
-            <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000" maxlength="15" inputmode="numeric" />
+            <label for="telefone">Telefone / WhatsApp * <small>(com máscara)</small></label>
+            <input type="tel" id="telefone" name="telefone" class="mono" placeholder="(43) 99999-8888" maxlength="15" inputmode="numeric" />
             <span class="erro-msg" id="erro-telefone"></span>
           </div>
         </div>
       </section>
 
       <section class="secao">
-        <h2>Endereço</h2>
+        <h2>Endereço residencial</h2>
         <div class="grid">
           <div class="campo">
-            <label for="cep">CEP * <small>(mascarado)</small></label>
-            <input type="text" id="cep" name="cep" placeholder="00000-000" maxlength="9" inputmode="numeric" />
+            <label for="cep">CEP * <small>(com máscara)</small></label>
+            <input type="text" id="cep" name="cep" class="mono" placeholder="00000-000" maxlength="9" inputmode="numeric" />
             <span class="erro-msg" id="erro-cep"></span>
           </div>
 
           <div class="campo span-2">
             <label for="logradouro">Logradouro *</label>
-            <input type="text" id="logradouro" name="logradouro" placeholder="Rua, Avenida..." />
+            <input type="text" id="logradouro" name="logradouro" placeholder="Rua, Avenida" />
             <span class="erro-msg" id="erro-logradouro"></span>
           </div>
 
@@ -81,7 +91,7 @@
           <div class="campo">
             <label for="estado">Estado (UF) *</label>
             <select id="estado" name="estado">
-              <option value="">Selecione...</option>
+              <option value="">Selecione</option>
               <option value="AC">AC</option>
               <option value="AL">AL</option>
               <option value="AP">AP</option>
@@ -116,22 +126,22 @@
       </section>
 
       <section class="secao">
-        <h2>Acesso e Perfil</h2>
+        <h2>Perfil e credenciais</h2>
         <div class="grid">
           <div class="campo span-2">
-            <label for="perfil">Perfil da conta *</label>
+            <label for="perfil">Modalidade de associado *</label>
             <select id="perfil" name="perfil">
-              <option value="">Selecione o perfil...</option>
+              <option value="">Selecione o perfil</option>
               <option value="estudante">Estudante</option>
-              <option value="desenvolvedor">Desenvolvedor(a)</option>
-              <option value="empresa">Empresa</option>
+              <option value="desenvolvedor">Desenvolvedor</option>
+              <option value="empresa">Empresa residente</option>
             </select>
             <span class="erro-msg" id="erro-perfil"></span>
           </div>
 
           <div class="campo">
             <label for="senha">Senha *</label>
-            <input type="password" id="senha" name="senha" placeholder="Mín. 8 caracteres (letras e números)" />
+            <input type="password" id="senha" name="senha" placeholder="Mínimo 8 caracteres com letras e números" />
             <span class="erro-msg" id="erro-senha"></span>
           </div>
 
@@ -144,7 +154,7 @@
           <div class="campo span-2">
             <label class="checkbox-label" for="termos">
               <input type="checkbox" id="termos" name="termos" />
-              <span>Li e aceito os termos de uso e política de privacidade. *</span>
+              <span>Declaro que li as normas de segurança das bancadas e aceito os termos de uso. *</span>
             </label>
             <span class="erro-msg" id="erro-termos"></span>
           </div>
@@ -154,7 +164,7 @@
       <div id="status-envio" class="status-envio" role="status" aria-live="polite"></div>
 
       <div class="acoes">
-        <button type="reset" id="btn-limpar" class="btn-secundario">Limpar</button>
+        <button type="reset" id="btn-limpar" class="btn-secundario">Limpar ficha</button>
         <button type="submit" id="btn-enviar" class="btn-primario">Validar e Enviar Cadastro</button>
       </div>
     </form>

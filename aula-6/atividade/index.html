@@ -3,155 +3,174 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aula 6 - Trilhas DevWeb (Display Grid e Display Flex)</title>
+  <title>Oficina Araucária · Marcenaria Sob Medida</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Schibsted+Grotesk:wght@600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
-  <!-- Header estruturado com display: flex -->
-  <header class="navbar">
-    <div class="brand">
-      <span class="logo-badge">&lt;/&gt;</span>
-      <span>DevWeb Hub</span>
+  <!-- Barra superior estruturada com display: flex -->
+  <header class="topo">
+    <div class="topo-conteudo">
+      <a class="marca" href="#inicio">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+          <path d="M2 2H26V8H8V26H2V2Z" fill="#181715" />
+          <rect x="12" y="12" width="14" height="14" fill="#bfb21a" />
+        </svg>
+        <span>Oficina Araucária</span>
+      </a>
+
+      <nav aria-label="Navegação da oficina">
+        <ul class="menu">
+          <li><a href="#pecas">Peças de série</a></li>
+          <li><a href="#madeiras">Madeiras e encaixes</a></li>
+          <li><a href="#visita">Visite a bancada</a></li>
+        </ul>
+      </nav>
     </div>
-    <nav aria-label="Menu principal">
-      <ul class="nav-links">
-        <li><a href="#destaque">Visão Geral</a></li>
-        <li><a href="#trilhas">Trilhas</a></li>
-        <li><a href="#roadmap">Cronograma</a></li>
-      </ul>
-    </nav>
   </header>
 
-  <main class="page">
-    <!-- Hero estruturado com display: grid -->
-    <section id="destaque" class="hero-grid">
-      <div class="hero-texto">
-        <span class="tag">Atividade 2 — Aula 6</span>
-        <h1>Arquitetura de Layouts Modernos com Grid e Flexbox</h1>
+  <main id="inicio">
+    <!-- Hero assimétrico usando display: grid -->
+    <section class="hero">
+      <div class="hero-chamada">
+        <h1>Móveis de madeira maciça feitos sob medida em Londrina</h1>
         <p>
-          Esta página demonstra a combinação prática de <strong>display: grid</strong>
-          para estruturar macro-seções e galerias de cartões, junto com
-          <strong>display: flex</strong> para barras de navegação, tags e alinhamentos internos.
+          Mesa de jantar, estante modular e banco de entrada produzidos com encaixes
+          tradicionais de espiga, acabamento a óleo natural e madeira certificada de manejo.
         </p>
-        <div class="hero-acoes">
-          <a class="btn-primario" href="#trilhas">Explorar Trilhas</a>
-          <a class="btn-secundario" href="#roadmap">Ver Módulos</a>
+        <div class="hero-links">
+          <a class="btn-principal" href="#pecas">Ver catálogo de peças</a>
+          <a class="btn-texto" href="#visita">Horários da marcenaria</a>
         </div>
       </div>
 
-      <aside class="hero-painel">
-        <h2>Resumo Técnico</h2>
-        <ul>
-          <li><strong>Navbar e Rodapé:</strong> <code>display: flex</code></li>
-          <li><strong>Hero e Catálogo:</strong> <code>display: grid</code></li>
-          <li><strong>Cards Internos:</strong> <code>display: flex</code> em coluna</li>
-          <li><strong>Responsividade:</strong> Colunas adaptativas</li>
-        </ul>
+      <aside class="hero-ficha">
+        <h2>Lote atual na bancada</h2>
+        <dl class="lista-especificacoes">
+          <div>
+            <dt>Espécies trabalhadas</dt>
+            <dd>Freijó, Imbuia e Peroba-rosa de demolição</dd>
+          </div>
+          <div>
+            <dt>Acabamento</dt>
+            <dd>Óleo de tungue e cera de carnaúba</dd>
+          </div>
+          <div>
+            <dt>Prazo médio de entrega</dt>
+            <dd>25 dias úteis após medição no local</dd>
+          </div>
+        </dl>
       </aside>
     </section>
 
-    <!-- Catálogo usando display: grid com cards em display: flex -->
-    <section id="trilhas" class="secao-trilhas">
-      <div class="secao-cabecalho">
-        <h2>Trilhas de Desenvolvimento</h2>
-        <p>Grade bidimensional responsiva combinada com flex containers dentro dos cartões.</p>
+    <!-- Catálogo usando display: grid com destaque assimétrico e rodapé flex -->
+    <section id="pecas" class="secao-pecas">
+      <div class="secao-titulo">
+        <h2>Peças sob encomenda</h2>
+        <p>Dimensões ajustadas à planta de cada ambiente, sem ferragens aparentes.</p>
       </div>
 
-      <div class="trilhas-grid">
-        <article class="trilha-card card-destaque">
-          <div>
-            <div class="tags-flex">
-              <span class="pill">HTML5</span>
-              <span class="pill">CSS Grid</span>
-              <span class="pill">Flexbox</span>
-            </div>
-            <h3>Fundamentos de Interfaces Responsivas</h3>
+      <div class="grade-pecas">
+        <article class="peca peca-principal">
+          <div class="peca-corpo">
+            <h3>Mesa de Jantar Paranapanema</h3>
             <p>
-              Construa páginas semânticas, organize componentes com Flexbox e
-              crie grades fluidas sem depender de frameworks externos.
+              Tampo em prancha inteiriça de freijó com borda chanfrada a quarenta e cinco graus
+              e travamento inferior por rabo de andorinha, permitindo acomodar de seis a dez lugares.
             </p>
           </div>
-          <div class="card-rodape">
-            <span>Carga horária: 20h</span>
-            <span class="status">Essencial</span>
+          <div class="peca-meta">
+            <span>Comprimento: 220 cm a 300 cm</span>
+            <span>Espessura do tampo: 4,2 cm</span>
           </div>
         </article>
 
-        <article class="trilha-card">
-          <div>
-            <div class="tags-flex">
-              <span class="pill">JavaScript</span>
-              <span class="pill">DOM</span>
-            </div>
-            <h3>Interatividade no Navegador</h3>
-            <p>Manipulação de eventos, validação de dados e atualização dinâmica de interface.</p>
+        <article class="peca">
+          <div class="peca-corpo">
+            <h3>Estante Modular Pinho</h3>
+            <p>
+              Prateleiras reguláveis em pino de latão maciço para livros, discos e caixas de som.
+            </p>
           </div>
-          <div class="card-rodape">
-            <span>Carga horária: 16h</span>
-            <span class="status">Prático</span>
+          <div class="peca-meta">
+            <span>Altura: 210 cm</span>
+            <span>Módulos: 80 cm</span>
           </div>
         </article>
 
-        <article class="trilha-card">
-          <div>
-            <div class="tags-flex">
-              <span class="pill">Fetch API</span>
-              <span class="pill">JSON</span>
-            </div>
-            <h3>Integração com APIs</h3>
-            <p>Envio de formulários via POST, tratamento de respostas JSON e feedback ao usuário.</p>
+        <article class="peca">
+          <div class="peca-corpo">
+            <h3>Banco de Entrada Tibagi</h3>
+            <p>
+              Assento ripado em peroba-rosa com prateleira inferior para calçados do dia a dia.
+            </p>
           </div>
-          <div class="card-rodape">
-            <span>Carga horária: 12h</span>
-            <span class="status">Integrado</span>
+          <div class="peca-meta">
+            <span>Largura: 135 cm</span>
+            <span>Carga: até 240 kg</span>
           </div>
         </article>
 
-        <article class="trilha-card">
-          <div>
-            <div class="tags-flex">
-              <span class="pill">@media</span>
-              <span class="pill">localStorage</span>
-            </div>
-            <h3>Persistência e Breakpoints</h3>
-            <p>Adaptação para dispositivos móveis e salvamento de estado local no navegador.</p>
+        <article class="peca">
+          <div class="peca-corpo">
+            <h3>Escrivaninha de Estúdio</h3>
+            <p>
+              Canaleta traseira oculta para régua de tomadas e gaveta única com corrediça em madeira.
+            </p>
           </div>
-          <div class="card-rodape">
-            <span>Carga horária: 10h</span>
-            <span class="status">Avançado</span>
+          <div class="peca-meta">
+            <span>Largura: 160 cm</span>
+            <span>Profundidade: 72 cm</span>
           </div>
         </article>
       </div>
     </section>
 
-    <!-- Linha do tempo em Grid -->
-    <section id="roadmap" class="roadmap">
-      <h2>Módulos da Disciplina</h2>
-      <div class="roadmap-grid">
-        <div class="step">
-          <strong>01. Estrutura</strong>
-          <p>HTML básico ao HTML5 semântico</p>
+    <!-- Faixa escura invertida em display: grid -->
+    <section id="madeiras" class="faixa-oficina">
+      <div class="faixa-conteudo">
+        <div class="faixa-texto">
+          <h2>Por que evitamos chapas revestidas e parafusos aparentes</h2>
+          <p>
+            Quando uma junta trabalha por encaixe mecânico e cola PVA de alta resistência,
+            o móvel suporta décadas de variação de umidade e pode ser lixado e restaurado quantas vezes forem necessárias.
+          </p>
         </div>
-        <div class="step">
-          <strong>02. Formulários</strong>
-          <p>Inputs, validações nativas e POST</p>
+        <div class="faixa-detalhes">
+          <div class="detalhe-item">
+            <strong>Secagem controlada</strong>
+            <span>Madeira estabilizada entre 10% e 12% de umidade antes do corte final.</span>
+          </div>
+          <div class="detalhe-item">
+            <strong>Manutenção simples</strong>
+            <span>Reaplicação anual de óleo com pano seco, sem solventes pesados.</span>
+          </div>
         </div>
-        <div class="step">
-          <strong>03. Layout CSS</strong>
-          <p>Estilização, Flexbox e CSS Grid</p>
+      </div>
+    </section>
+
+    <!-- Seção de contato / visita estruturada com display: flex e grid -->
+    <section id="visita" class="visita">
+      <div class="visita-grid">
+        <div>
+          <h2>Visite a marcenaria</h2>
+          <p>Rua Espírito Santo, bairro Jardim Higienópolis, Londrina.</p>
         </div>
-        <div class="step">
-          <strong>04. JavaScript</strong>
-          <p>DOM, máscaras, API e localStorage</p>
+        <div class="visita-horarios">
+          <p><strong>Segunda a sexta:</strong> 9h às 18h</p>
+          <p><strong>Sábados:</strong> 9h às 13h</p>
+          <p><strong>Contato:</strong> <a href="mailto:oficina@araucariamarcenaria.example">oficina@araucariamarcenaria.example</a></p>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- Footer com display: flex -->
+  <!-- Rodapé estruturado com display: flex -->
   <footer class="rodape">
-    <p>DevWeb Hub — Atividade 2 (Aula 6: CSS Grid &amp; Flexbox)</p>
-    <p>Desenvolvimento Web • 2026</p>
+    <p>Oficina Araucária · Londrina, Paraná</p>
+    <p>Desenvolvimento Front-End para Web · Aula 6 (Grid e Flexbox)</p>
   </footer>
 </body>
 </html>

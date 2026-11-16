@@ -11,13 +11,13 @@
     "github_usuario": "ca10r0dr1gu3s",
     "nivel_experiencia": "intermediario",
     "tamanho_camiseta": "G",
-    "trilha": "full-stack",
+    "trilha": "front-end",
     "modalidade": "presencial",
     "interesses": [
       "html-css",
       "javascript"
     ],
-    "motivacao": "Construir uma solucao web responsiva e integrada com APIs REST durante o hackathon.",
+    "motivacao": "Aprofundar layouts responsivos com CSS Grid e integracao com APIs abertas nas bancadas da mostra.",
     "aceite_regulamento": "sim"
   },
   "headers": {
@@ -27,7 +27,7 @@
     "user-agent": "Mozilla/5.0",
     "accept-encoding": "gzip, br",
     "x-forwarded-proto": "https",
-    "content-length": "417"
+    "content-length": "430"
   },
   "json": {
     "nome_completo": "Caio Rodrigues",
@@ -38,13 +38,13 @@
     "github_usuario": "ca10r0dr1gu3s",
     "nivel_experiencia": "intermediario",
     "tamanho_camiseta": "G",
-    "trilha": "full-stack",
+    "trilha": "front-end",
     "modalidade": "presencial",
     "interesses": [
       "html-css",
       "javascript"
     ],
-    "motivacao": "Construir uma solucao web responsiva e integrada com APIs REST durante o hackathon.",
+    "motivacao": "Aprofundar layouts responsivos com CSS Grid e integracao com APIs abertas nas bancadas da mostra.",
     "aceite_regulamento": "sim"
   },
   "url": "https://postman-echo.com/post"

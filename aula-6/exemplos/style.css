@@ -1,3 +1,14 @@
+:root {
+  --bg: #f7f9fa;
+  --surface: #ecf0f2;
+  --sheet: #ffffff;
+  --ink: #1f3038;
+  --muted: #5d6b72;
+  --accent: #0d7480;
+  --accent-dark: #095861;
+  --line: #cfd8dc;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -5,72 +16,85 @@
 }
 
 body {
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-  background-color: #f8fafc;
-  color: #1e293b;
-  line-height: 1.5;
-}
-
-.topo {
-  background: #0f172a;
-  color: #ffffff;
-  text-align: center;
-  padding: 2rem 1rem;
-}
-
-.topo p {
-  color: #cbd5e1;
-  margin-top: 0.4rem;
+  font-family: "IBM Plex Sans", system-ui, sans-serif;
+  background-color: var(--bg);
+  color: var(--ink);
+  line-height: 1.55;
 }
 
 code {
-  background: rgba(148, 163, 184, 0.22);
-  padding: 0.15rem 0.4rem;
-  border-radius: 4px;
-  font-family: Consolas, monospace;
-  font-size: 0.92em;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.9em;
+  background-color: var(--surface);
+  padding: 0.12rem 0.38rem;
+  border-radius: 3px;
+}
+
+.topo {
+  background-color: var(--ink);
+  color: #ffffff;
+  padding: 2.25rem 1.25rem;
+  border-bottom: 4px solid var(--accent);
+}
+
+.topo-wrap {
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.topo h1 {
+  font-size: 1.9rem;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.4rem;
+}
+
+.topo code {
+  background-color: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+}
+
+.topo p {
+  color: #cfd8dc;
 }
 
 .container {
-  max-width: 960px;
-  margin: 2rem auto;
-  padding: 0 1rem;
+  max-width: 920px;
+  margin: 2rem auto 3rem;
+  padding: 0 1.25rem;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
 
-.card {
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-radius: 12px;
+.bloco {
+  background-color: var(--sheet);
+  border: 1px solid var(--line);
   padding: 1.5rem;
-  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
 }
 
-.card h2 {
-  margin-bottom: 0.4rem;
-  color: #0f172a;
+.bloco h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.35rem;
 }
 
-.card > p {
-  color: #475569;
+.bloco > p {
+  color: var(--muted);
   margin-bottom: 1rem;
 }
 
-.demo-box {
-  background: #f1f5f9;
-  border: 2px dashed #cbd5e1;
-  border-radius: 8px;
+.amostra {
+  background-color: var(--surface);
+  border: 1px solid var(--line);
   padding: 1rem;
   margin-top: 0.75rem;
 }
 
-.item {
-  background: #2563eb;
+.caixa {
+  background-color: var(--accent);
   color: #ffffff;
-  font-weight: 600;
-  border-radius: 6px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.88rem;
+  font-weight: 500;
   text-align: center;
 }
 
@@ -89,23 +113,22 @@ code {
 .inline {
   display: inline;
   padding: 0.35rem 0.75rem;
-  width: 250px;  /* Ignorado em elementos inline */
-  height: 100px; /* Ignorado em elementos inline */
-  background: #0284c7;
+  width: 240px;
+  height: 90px;
+  background-color: #2c4a57;
 }
 
 /* 3. Inline-Block */
 .inline-block {
   display: inline-block;
   width: 150px;
-  height: 60px;
-  line-height: 60px;
-  margin-right: 0.5rem;
-  background: #7c3aed;
-  font-size: 0.9rem;
+  height: 56px;
+  line-height: 56px;
+  margin-right: 0.45rem;
+  background-color: var(--ink);
 }
 
-/* 4. None vs Hidden */
+/* 4. None e Hidden */
 .oculto-none {
   display: none;
 }
@@ -124,9 +147,9 @@ code {
 }
 
 .flex-item {
-  flex: 1 1 140px;
+  flex: 1 1 150px;
   padding: 1rem;
-  background: #059669;
+  background-color: var(--accent);
 }
 
 /* 6. Grid */
@@ -138,12 +161,12 @@ code {
 
 .grid-item {
   padding: 1rem;
-  background: #ea580c;
+  background-color: var(--ink);
 }
 
 .grid-item.destaque {
   grid-column: span 2;
-  background: #c2410c;
+  background-color: var(--accent-dark);
 }
 
 @media (max-width: 640px) {
