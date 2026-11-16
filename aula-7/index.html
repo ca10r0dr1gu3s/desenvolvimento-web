@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aula 7 - Nosso Primeiro JavaScript</title>
+  <link rel="stylesheet" href="./style.css" />
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <header class="topo">
+    <div class="topo-conteudo">
+      <div>
+        <h1>Nosso Primeiro JavaScript</h1>
+        <p>Aula 7 — Manipulação do DOM, eventos de clique, listas dinâmicas e mudança de tema.</p>
+      </div>
+      <button type="button" id="btn-tema" class="btn-secundario">Ativar Modo Escuro</button>
+    </div>
+  </header>
+
+  <main class="grade">
+    <!-- 1. Saudação Dinâmica -->
+    <section class="card">
+      <h2>1. Saudação Interativa</h2>
+      <p>Digite seu nome para atualizar o texto da página dinamicamente via DOM.</p>
+      <div class="linha-input">
+        <input type="text" id="input-nome" placeholder="Digite seu nome..." />
+        <button type="button" id="btn-saudar" class="btn-primario">Saudar</button>
+      </div>
+      <p id="mensagem-saudacao" class="resultado">Olá, visitante! Bem-vindo ao JavaScript.</p>
+    </section>
+
+    <!-- 2. Contador com Eventos -->
+    <section class="card">
+      <h2>2. Contador com Eventos</h2>
+      <p>Exemplo de atualização numérica e alteração de estilos por JavaScript.</p>
+      <div class="contador-valor" id="valor-contador">0</div>
+      <div class="acoes">
+        <button type="button" id="btn-diminuir" class="btn-secundario">- 1</button>
+        <button type="button" id="btn-zerar" class="btn-secundario">Zerar</button>
+        <button type="button" id="btn-aumentar" class="btn-primario">+ 1</button>
+      </div>
+    </section>
+
+    <!-- 3. Lista Dinâmica -->
+    <section class="card card-largo">
+      <h2>3. Lista Dinâmica (<code>createElement</code>)</h2>
+      <p>Adicione e remova metas de estudo sem recarregar a página.</p>
+      <div class="linha-input">
+        <input type="text" id="input-item" placeholder="Ex.: Revisar seletores CSS" />
+        <button type="button" id="btn-adicionar" class="btn-primario">Adicionar</button>
+      </div>
+      <ul id="lista-itens" class="lista"></ul>
+    </section>
+  </main>
+</body>
+</html>
