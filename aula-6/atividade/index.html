@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aula 6 - Trilhas DevWeb (Display Grid e Display Flex)</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <!-- Header estruturado com display: flex -->
+  <header class="navbar">
+    <div class="brand">
+      <span class="logo-badge">&lt;/&gt;</span>
+      <span>DevWeb Hub</span>
+    </div>
+    <nav aria-label="Menu principal">
+      <ul class="nav-links">
+        <li><a href="#destaque">Visão Geral</a></li>
+        <li><a href="#trilhas">Trilhas</a></li>
+        <li><a href="#roadmap">Cronograma</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="page">
+    <!-- Hero estruturado com display: grid -->
+    <section id="destaque" class="hero-grid">
+      <div class="hero-texto">
+        <span class="tag">Atividade 2 — Aula 6</span>
+        <h1>Arquitetura de Layouts Modernos com Grid e Flexbox</h1>
+        <p>
+          Esta página demonstra a combinação prática de <strong>display: grid</strong>
+          para estruturar macro-seções e galerias de cartões, junto com
+          <strong>display: flex</strong> para barras de navegação, tags e alinhamentos internos.
+        </p>
+        <div class="hero-acoes">
+          <a class="btn-primario" href="#trilhas">Explorar Trilhas</a>
+          <a class="btn-secundario" href="#roadmap">Ver Módulos</a>
+        </div>
+      </div>
+
+      <aside class="hero-painel">
+        <h2>Resumo Técnico</h2>
+        <ul>
+          <li><strong>Navbar e Rodapé:</strong> <code>display: flex</code></li>
+          <li><strong>Hero e Catálogo:</strong> <code>display: grid</code></li>
+          <li><strong>Cards Internos:</strong> <code>display: flex</code> em coluna</li>
+          <li><strong>Responsividade:</strong> Colunas adaptativas</li>
+        </ul>
+      </aside>
+    </section>
+
+    <!-- Catálogo usando display: grid com cards em display: flex -->
+    <section id="trilhas" class="secao-trilhas">
+      <div class="secao-cabecalho">
+        <h2>Trilhas de Desenvolvimento</h2>
+        <p>Grade bidimensional responsiva combinada com flex containers dentro dos cartões.</p>
+      </div>
+
+      <div class="trilhas-grid">
+        <article class="trilha-card card-destaque">
+          <div>
+            <div class="tags-flex">
+              <span class="pill">HTML5</span>
+              <span class="pill">CSS Grid</span>
+              <span class="pill">Flexbox</span>
+            </div>
+            <h3>Fundamentos de Interfaces Responsivas</h3>
+            <p>
+              Construa páginas semânticas, organize componentes com Flexbox e
+              crie grades fluidas sem depender de frameworks externos.
+            </p>
+          </div>
+          <div class="card-rodape">
+            <span>Carga horária: 20h</span>
+            <span class="status">Essencial</span>
+          </div>
+        </article>
+
+        <article class="trilha-card">
+          <div>
+            <div class="tags-flex">
+              <span class="pill">JavaScript</span>
+              <span class="pill">DOM</span>
+            </div>
+            <h3>Interatividade no Navegador</h3>
+            <p>Manipulação de eventos, validação de dados e atualização dinâmica de interface.</p>
+          </div>
+          <div class="card-rodape">
+            <span>Carga horária: 16h</span>
+            <span class="status">Prático</span>
+          </div>
+        </article>
+
+        <article class="trilha-card">
+          <div>
+            <div class="tags-flex">
+              <span class="pill">Fetch API</span>
+              <span class="pill">JSON</span>
+            </div>
+            <h3>Integração com APIs</h3>
+            <p>Envio de formulários via POST, tratamento de respostas JSON e feedback ao usuário.</p>
+          </div>
+          <div class="card-rodape">
+            <span>Carga horária: 12h</span>
+            <span class="status">Integrado</span>
+          </div>
+        </article>
+
+        <article class="trilha-card">
+          <div>
+            <div class="tags-flex">
+              <span class="pill">@media</span>
+              <span class="pill">localStorage</span>
+            </div>
+            <h3>Persistência e Breakpoints</h3>
+            <p>Adaptação para dispositivos móveis e salvamento de estado local no navegador.</p>
+          </div>
+          <div class="card-rodape">
+            <span>Carga horária: 10h</span>
+            <span class="status">Avançado</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Linha do tempo em Grid -->
+    <section id="roadmap" class="roadmap">
+      <h2>Módulos da Disciplina</h2>
+      <div class="roadmap-grid">
+        <div class="step">
+          <strong>01. Estrutura</strong>
+          <p>HTML básico ao HTML5 semântico</p>
+        </div>
+        <div class="step">
+          <strong>02. Formulários</strong>
+          <p>Inputs, validações nativas e POST</p>
+        </div>
+        <div class="step">
+          <strong>03. Layout CSS</strong>
+          <p>Estilização, Flexbox e CSS Grid</p>
+        </div>
+        <div class="step">
+          <strong>04. JavaScript</strong>
+          <p>DOM, máscaras, API e localStorage</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer com display: flex -->
+  <footer class="rodape">
+    <p>DevWeb Hub — Atividade 2 (Aula 6: CSS Grid &amp; Flexbox)</p>
+    <p>Desenvolvimento Web • 2026</p>
+  </footer>
+</body>
+</html>

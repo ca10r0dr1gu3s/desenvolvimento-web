@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aula 6 - Exemplos de Display (Block, Inline, Flex e Grid)</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <header class="topo">
+    <h1>Propriedade CSS <code>display</code> na Prática</h1>
+    <p>Atividade 1 — Exemplos visuais de <code>block</code>, <code>inline</code>, <code>inline-block</code>, <code>none</code>, <code>flex</code> e <code>grid</code>.</p>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>1. <code>display: block</code></h2>
+      <p>Cada elemento ocupa toda a largura disponível e inicia em uma nova linha.</p>
+      <div class="demo-box">
+        <div class="item block">Bloco 1</div>
+        <div class="item block">Bloco 2</div>
+        <div class="item block">Bloco 3</div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>2. <code>display: inline</code></h2>
+      <p>Elementos permanecem na mesma linha e ignoram propriedades como <code>width</code> e <code>height</code>.</p>
+      <div class="demo-box">
+        <span class="item inline">Inline A</span>
+        <span class="item inline">Inline B</span>
+        <span class="item inline">Inline C</span>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>3. <code>display: inline-block</code></h2>
+      <p>Permanece alinhado na mesma linha, mas respeita <code>width</code>, <code>height</code> e espaçamentos completos.</p>
+      <div class="demo-box">
+        <span class="item inline-block">Box 1 (140x60)</span>
+        <span class="item inline-block">Box 2 (140x60)</span>
+        <span class="item inline-block">Box 3 (140x60)</span>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>4. <code>display: none</code> vs <code>visibility: hidden</code></h2>
+      <p>O item com <code>display: none</code> não ocupa espaço no layout; já <code>visibility: hidden</code> oculta visualmente, mantendo o espaço.</p>
+      <div class="demo-box">
+        <span class="item inline-block">Visível 1</span>
+        <span class="item inline-block oculto-none">display: none</span>
+        <span class="item inline-block">Visível 2 (colado)</span>
+      </div>
+      <div class="demo-box">
+        <span class="item inline-block">Visível A</span>
+        <span class="item inline-block oculto-visibility">visibility: hidden</span>
+        <span class="item inline-block">Visível B (espaço preservado)</span>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>5. <code>display: flex</code> (Flexbox)</h2>
+      <p>Layout unidimensional (linha ou coluna) ideal para alinhamento e distribuição flexível.</p>
+      <div class="demo-box flex-container">
+        <div class="item flex-item">Flex 1</div>
+        <div class="item flex-item">Flex 2</div>
+        <div class="item flex-item">Flex 3</div>
+        <div class="item flex-item">Flex 4</div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>6. <code>display: grid</code> (CSS Grid)</h2>
+      <p>Layout bidimensional com controle simultâneo de linhas, colunas e áreas.</p>
+      <div class="demo-box grid-container">
+        <div class="item grid-item destaque">Coluna expandida (span 2)</div>
+        <div class="item grid-item">Célula 2</div>
+        <div class="item grid-item">Célula 3</div>
+        <div class="item grid-item">Célula 4</div>
+        <div class="item grid-item">Célula 5</div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
