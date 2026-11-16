@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aula 4 - Inscrição Hackathon Tech &amp; Web</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --surface: #ffffff;
+      --primary: #2563eb;
+      --primary-hover: #1d4ed8;
+      --text: #1e293b;
+      --muted: #64748b;
+      --border: #cbd5e1;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 2.5rem 1rem;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      background: var(--surface);
+      padding: 2.25rem;
+      border-radius: 14px;
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+    }
+
+    header {
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 1rem;
+      margin-bottom: 1.75rem;
+    }
+
+    header h1 {
+      margin: 0 0 0.4rem;
+      color: #0f172a;
+      font-size: 1.75rem;
+    }
+
+    header p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    fieldset {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    legend {
+      font-weight: 700;
+      color: var(--primary);
+      padding: 0 0.5rem;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+    }
+
+    .field {
+      margin-bottom: 1rem;
+    }
+
+    .field label.title {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+      font-size: 0.95rem;
+    }
+
+    .required-mark {
+      color: #dc2626;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="date"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 0.65rem 0.8rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-family: inherit;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+    }
+
+    .hint {
+      display: block;
+      margin-top: 0.25rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .option-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem 1.25rem;
+      margin-top: 0.35rem;
+    }
+
+    .option-group label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-weight: 400;
+      cursor: pointer;
+    }
+
+    .actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: flex-end;
+      margin-top: 1.25rem;
+    }
+
+    button {
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    button[type="submit"] {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    button[type="submit"]:hover {
+      background: var(--primary-hover);
+    }
+
+    button[type="reset"] {
+      background: #e2e8f0;
+      color: #334155;
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>Inscrição — Hackathon Tech &amp; Web 2026</h1>
+      <p>Formulário HTML com envio via POST para <code>https://postman-echo.com/post</code>.</p>
+    </header>
+
+    <form action="https://postman-echo.com/post" method="POST">
+      <fieldset>
+        <legend>1. Identificação do Participante</legend>
+
+        <div class="grid-2">
+          <!-- Campo 1: Texto obrigatório com placeholder -->
+          <div class="field">
+            <label class="title" for="nome_completo">Nome completo <span class="required-mark">*</span></label>
+            <input
+              type="text"
+              id="nome_completo"
+              name="nome_completo"
+              placeholder="Ex.: Caio Rodrigues"
+              minlength="3"
+              required
+            />
+          </div>
+
+          <!-- Campo 2: E-mail obrigatório com placeholder -->
+          <div class="field">
+            <label class="title" for="email">E-mail <span class="required-mark">*</span></label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="seuemail@exemplo.com"
+              required
+            />
+          </div>
+
+          <!-- Campo 3: CPF com pattern de validação -->
+          <div class="field">
+            <label class="title" for="cpf">CPF <span class="required-mark">*</span></label>
+            <input
+              type="text"
+              id="cpf"
+              name="cpf"
+              placeholder="000.000.000-00"
+              pattern="\d{3}\.\d{3}\.\d{3}-\d{2}"
+              title="Digite o CPF no formato 000.000.000-00"
+              required
+            />
+            <span class="hint">Formato: 000.000.000-00</span>
+          </div>
+
+          <!-- Campo 4: Telefone com pattern de validação -->
+          <div class="field">
+            <label class="title" for="telefone">Telefone / WhatsApp <span class="required-mark">*</span></label>
+            <input
+              type="tel"
+              id="telefone"
+              name="telefone"
+              placeholder="(43) 99999-9999"
+              pattern="\(\d{2}\)\s?\d{4,5}-\d{4}"
+              title="Informe o DDD e número no formato (43) 99999-9999"
+              required
+            />
+            <span class="hint">Formato: (DD) 99999-9999</span>
+          </div>
+
+          <!-- Campo 5: Data de nascimento -->
+          <div class="field">
+            <label class="title" for="data_nascimento">Data de nascimento <span class="required-mark">*</span></label>
+            <input
+              type="date"
+              id="data_nascimento"
+              name="data_nascimento"
+              required
+            />
+          </div>
+
+          <!-- Campo 6: Usuário GitHub com pattern -->
+          <div class="field">
+            <label class="title" for="github_usuario">Usuário no GitHub</label>
+            <input
+              type="text"
+              id="github_usuario"
+              name="github_usuario"
+              placeholder="ex: ca10r0dr1gu3s"
+              pattern="[A-Za-z0-9-]{1,39}"
+              title="Use apenas letras, números ou hífen (sem @)"
+            />
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>2. Perfil Técnico e Participação</legend>
+
+        <div class="grid-2">
+          <!-- Campo 7: Select -->
+          <div class="field">
+            <label class="title" for="nivel_experiencia">Nível de experiência <span class="required-mark">*</span></label>
+            <select id="nivel_experiencia" name="nivel_experiencia" required>
+              <option value="">Selecione seu nível...</option>
+              <option value="iniciante">Iniciante (1º contato com programação)</option>
+              <option value="intermediario">Intermediário (já crio projetos)</option>
+              <option value="avancado">Avançado (experiência em produção)</option>
+            </select>
+          </div>
+
+          <!-- Campo 8: Select -->
+          <div class="field">
+            <label class="title" for="tamanho_camiseta">Tamanho da camiseta</label>
+            <select id="tamanho_camiseta" name="tamanho_camiseta">
+              <option value="P">P</option>
+              <option value="M" selected>M</option>
+              <option value="G">G</option>
+              <option value="GG">GG</option>
+              <option value="XG">XG</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Campo 9: Radio -->
+        <div class="field">
+          <label class="title">Trilha principal <span class="required-mark">*</span></label>
+          <div class="option-group">
+            <label><input type="radio" name="trilha" value="front-end" required /> Front-end</label>
+            <label><input type="radio" name="trilha" value="back-end" /> Back-end</label>
+            <label><input type="radio" name="trilha" value="full-stack" /> Full Stack</label>
+            <label><input type="radio" name="trilha" value="ia-dados" /> IA &amp; Dados</label>
+          </div>
+        </div>
+
+        <!-- Campo 10: Radio -->
+        <div class="field">
+          <label class="title">Modalidade de participação</label>
+          <div class="option-group">
+            <label><input type="radio" name="modalidade" value="presencial" checked /> Presencial</label>
+            <label><input type="radio" name="modalidade" value="online" /> Online</label>
+          </div>
+        </div>
+
+        <!-- Campo 11: Checkbox -->
+        <div class="field">
+          <label class="title">Tecnologias de interesse</label>
+          <div class="option-group">
+            <label><input type="checkbox" name="interesses" value="html-css" /> HTML &amp; CSS</label>
+            <label><input type="checkbox" name="interesses" value="javascript" /> JavaScript</label>
+            <label><input type="checkbox" name="interesses" value="apis-rest" /> APIs REST</label>
+            <label><input type="checkbox" name="interesses" value="git-github" /> Git &amp; GitHub</label>
+          </div>
+        </div>
+
+        <!-- Campo 12: Textarea -->
+        <div class="field">
+          <label class="title" for="motivacao">Ideia ou motivação para o evento</label>
+          <textarea
+            id="motivacao"
+            name="motivacao"
+            rows="4"
+            placeholder="Descreva brevemente o projeto que gostaria de desenvolver..."
+          ></textarea>
+        </div>
+
+        <!-- Campo 13: Checkbox obrigatório -->
+        <div class="field">
+          <label>
+            <input type="checkbox" name="aceite_regulamento" value="sim" required />
+            Declaro que li e concordo com o regulamento do evento. <span class="required-mark">*</span>
+          </label>
+        </div>
+      </fieldset>
+
+      <div class="actions">
+        <button type="reset">Limpar dados</button>
+        <button type="submit">Enviar inscrição (POST)</button>
+      </div>
+    </form>
+  </main>
+</body>
+</html>

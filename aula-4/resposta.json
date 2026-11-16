@@ -1,0 +1,51 @@
+{
+  "args": {},
+  "data": "",
+  "files": {},
+  "form": {
+    "nome_completo": "Caio Rodrigues",
+    "email": "caio.rodrigues@exemplo.com",
+    "cpf": "123.456.789-00",
+    "telefone": "(43) 99999-8888",
+    "data_nascimento": "2000-05-15",
+    "github_usuario": "ca10r0dr1gu3s",
+    "nivel_experiencia": "intermediario",
+    "tamanho_camiseta": "G",
+    "trilha": "full-stack",
+    "modalidade": "presencial",
+    "interesses": [
+      "html-css",
+      "javascript"
+    ],
+    "motivacao": "Construir uma solucao web responsiva e integrada com APIs REST durante o hackathon.",
+    "aceite_regulamento": "sim"
+  },
+  "headers": {
+    "host": "postman-echo.com",
+    "content-type": "application/x-www-form-urlencoded",
+    "accept": "*/*",
+    "user-agent": "Mozilla/5.0",
+    "accept-encoding": "gzip, br",
+    "x-forwarded-proto": "https",
+    "content-length": "417"
+  },
+  "json": {
+    "nome_completo": "Caio Rodrigues",
+    "email": "caio.rodrigues@exemplo.com",
+    "cpf": "123.456.789-00",
+    "telefone": "(43) 99999-8888",
+    "data_nascimento": "2000-05-15",
+    "github_usuario": "ca10r0dr1gu3s",
+    "nivel_experiencia": "intermediario",
+    "tamanho_camiseta": "G",
+    "trilha": "full-stack",
+    "modalidade": "presencial",
+    "interesses": [
+      "html-css",
+      "javascript"
+    ],
+    "motivacao": "Construir uma solucao web responsiva e integrada com APIs REST durante o hackathon.",
+    "aceite_regulamento": "sim"
+  },
+  "url": "https://postman-echo.com/post"
+}
